@@ -1,24 +1,8 @@
 name: NPM CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "bin/**"
-      - "test/**"
-      - "plugins/omo/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/npm-ci.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "bin/**"
-      - "test/**"
-      - "plugins/omo/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/npm-ci.yml"
+  # automatic triggers removed 2026-10-30 to stop burning hosted-runner minutes; run manually
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

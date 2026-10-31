@@ -1,17 +1,13 @@
 name: Web Deploy (Cloudflare Workers)
 
 on:
+  # automatic triggers removed 2026-10-30 to stop burning hosted-runner minutes; run manually
   workflow_dispatch:
     inputs:
       environment:
         description: "Wrangler environment (leave blank for default)"
         required: false
         default: ""
-  push:
-    branches: [main]
-    paths:
-      - "packages/web/**"
-      - ".github/workflows/web-deploy.yml"
 
 concurrency:
   group: web-deploy-${{ github.ref }}

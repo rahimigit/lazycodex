@@ -1,16 +1,8 @@
 name: Web CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "packages/web/**"
-      - ".github/workflows/web-ci.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "packages/web/**"
-      - ".github/workflows/web-ci.yml"
+  # automatic triggers removed 2026-10-30 to stop burning hosted-runner minutes; run manually
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
